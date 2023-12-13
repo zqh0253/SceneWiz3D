@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="media/graphics/favicon.ico" rel="shortcut icon" />
+  <title> SceneWiz3D </title>
+  <link rel="stylesheet" href="static/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Segoe+UI" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/bulma.min.css">
+  <link rel="stylesheet" href="./static/fontawesome.all.min.css">
+  <script defer src="./static/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <!-- SECTION: HEADER -->
+  <div class="n-header">
+  </div>
+  <div class="n-title">
+    <h1> <span class="animated-text">SceneWiz3D</span>: Towards Text-guided 3D Scene Composition </h1>
+  </div>
+  <div class="n-byline">
+    <div class="byline">
+      <ul class="authors">
+        <li> <a href="https://zqh0253.github.io" target="_blank"
+            style="color: inherit; text-decoration: inherit;">Qihang Zhang</a> <sup> 1, 2 </sup>
+        </li>
+        <li> <a href="https://mightychaos.github.io/" target="_blank"
+            style="color: inherit; text-decoration: inherit;">Chaoyang Wang</a> <sup> 2 </sup>
+        </li>
+        <li> <a href="https://aliaksandrsiarohin.github.io/aliaksandr-siarohin-website/" target="_blank"
+            style="color: inherit; text-decoration: inherit;">Aliaksandr Siarohin</a> <sup> 2 </sup>
+        </li>
+        <li> <a href="https://payeah.net/" target="_blank" style="color: inherit; text-decoration: inherit;">Peiye
+            Zhuang</a> <sup> 2 </sup>
+        </li>
+        <li> <a href="https://justimyhxu.github.io/" target="_blank"
+            style="color: inherit; text-decoration: inherit;">Yinghao Xu</a> <sup> 3 </sup>
+        </li>
+        <br>
+        <li> <a href="https://ceyuan.me/" target="_blank" style="color: inherit; text-decoration: inherit;">Ceyuan
+            Yang</a>
+          <sup> 1 </sup>
+        </li>
+        <li> <a href="http://dahua.site/" target="_blank" style="color: inherit; text-decoration: inherit;">Dahua
+            Lin</a> <sup> 1 </sup>
+        </li>
+        <li> <a href="https://boleizhou.github.io/" target="_blank"
+            style="color: inherit; text-decoration: inherit;">Bolei Zhou</a> <sup> 4
+          </sup>
+        </li>
+        <li> <a href="https://www.stulyakov.com/" target="_blank"
+            style="color: inherit; text-decoration: inherit;">Sergey Tulyakov</a> <sup> 2 </sup>
+        </li>
+        <li> <a href="https://hsinyinglee.com/" target="_blank"
+            style="color: inherit; text-decoration: inherit;">Hsin-Ying Lee</a> <sup> 2 </sup>
+        </li>
+      </ul>
+      <div class="authors-affiliations-gap"></div>
+      <ul class="authors affiliations">
+        <li>
+          <sup> 1 </sup> The Chinese University of Hong Kong
+        </li>
+        <li>
+          <sup> 2 </sup> Snap Inc.
+        </li>
+        <li>
+          <sup> 3 </sup> Stanford University
+        </li>
+        <li>
+          <sup> 4 </sup> University of California, Los Angeles
+        </li>
+      </ul>
+
+      <ul>
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <!-- PDF Link. -->
+            <span class="link-block">
+              <a href="media/scenewiz3d.pdf" target="_blank" class="external-link button is-normal is-rounded">
+                <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="" target="_blank" class="external-link button is-normal is-rounded">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <!-- Video Link. -->
+            <span class="link-block">
+              <a href="https://www.youtube.com/playlist?list=PL_wqs6clStimxUrDFJBMPa9YQRGxrd_Yc" target="_blank"
+                class="external-link button is-normal is-rounded">
+                <span class="icon">
+                  <i class="fab fa-youtube"></i>
+                </span>
+                <span>Demo</span>
+              </a>
+            </span>
+            <!-- Code Link. -->
+            <span class="link-block">
+              <a href="https://github.com/zqh0253/SceneWiz3D" target="_blank"
+                class="external-link button is-normal is-rounded">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code (Coming soon)</span>
+              </a>
+            </span>
+            <!-- Dataset Link. -->
+            <span class="link-block">
+              <a href="./#citation" target="_blank" class="external-link button is-normal is-rounded">
+                <span class="icon">
+                  <i class="fa fa-quote-left"></i>
+                </span>
+                <span>Cite</span>
+              </a>
+          </div>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- SECTION: MAIN BODY -->
+  <div class="n-article">
+    <!-- teaser -->
+    <div class="videoteaser-grid">
+      <div class="videoteaser-row">
+        <div class="videoteaser">
+          <video autoplay loop muted playsinline>
+            <source src="media/artistic/9.mp4" type="video/mp4">
+          </video>
+
+        </div>
+        <div class="videoteaser">
+          <video autoplay loop muted playsinline>
+            <source src="media/comparison/washing/ours.mp4" type="video/mp4">
+          </video>
+
+        </div>
+        <div class="videoteaser">
+          <video autoplay loop muted playsinline>
+            <source src="media/diverse/9.mp4" type="video/mp4">
+          </video>
+
+        </div>
+      </div>
+    </div>
+    <center>
+      <p style="color: grey; font-style: italic; "><b>High-quality 3D scenes synthesized by <span
+            class="animated-text">SceneWiz3D</span>.</b> Prompts: (1) a bedroom, with large windows revealing sunset
+        outside, Ukiyo-e style; (2) a washing room, realistic detailed photo; (3) an astronaut in the mysterious space.
+
+      </p>
+    </center>
+    <!-- paper links -->
+
+    <h2 id="abstract"> Abstract </h2>
+
+    <p>
+      <!-- We are witnessing significant breakthroughs in the technology for generating 3D objects from text. Existing approaches either leverage large text-to-image models to optimize a 3D representation or train 3D generators on object-centric datasets. Generating entire scenes, however, remains very challenging as a scene contains multiple 3D objects, diverse and scattered. -->
+      We introduce <b>SceneWiz3D</b> –- a novel approach to synthesize high-fidelity 3D scenes from text. We marry the
+      locality of objects with globality of scenes by introducing a hybrid 3D representation – explicit for objects and
+      implicit for scenes.
+      Remarkably, an object, being represented explicitly, can be either generated from text using conventional
+      text-to-3D approaches, or provided by users.
+      To configure the layout of the scene and automatically place objects, we apply the Particle Swarm Optimization
+      technique during the optimization process. Furthermore, in the text-to-scene scenario, it is difficult for certain
+      parts of the scene (e.g., corners, occlusion) to receive multi-view supervision, leading to inferior geometry. To
+      mitigate the lack of such supervision, we incorporate an RGBD panorama diffusion model as additional prior,
+      resulting in high-quality geometry.
+      Extensive evaluation supports that our approach achieves superior quality over previous approaches, enabling the
+      generation of detailed and view-consistent 3D scenes:</p>
+    <p>&nbsp;</p>
+
+    <div class="video-container">
+
+      <div class="video-block">
+        <div class="video-wrapper">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/QBQC9wbew7g?si=wg6NKlc2qJnwIJ-k"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <h3>Synthesized 3D Scenes</h3>
+      </div>
+    </div>
+    <p>&nbsp;</p>
+
+    <h2 id="framework"> Overview </h2>
+
+
+    </p><img src="media/framework.jpg" width="100%" /></p>
+
+
+    <p>&nbsp;</p>
+    <p>Our goal is to create high-fidelity 3D scenes from text. We propose a hybrid scene representation where objects
+      of Interest (OOIs) are modeled by Deep Marching Tetrahedra.
+      The remaining parts of the scene is modeled by Neural Radiance Field (NeRF). </p>
+
+    <p> As we disentangle OOIs from the rest of the scene in our hybrid representation, we need to determine the
+      configuration for each object, including coordinates, scaling factor, and rotation degree.
+      We find that it is nontrivial to adopt gradient descent to update the low-dimensional config, but instead propose
+      to use Particle Swarm Optimization (PSO) to automatically configure the scene's layout.
+      Different from prior works that only employ perspectivew view distillation, we also incorporate LDM3D, a diffusion
+      model finetuned on panoramic images in RGBD space to provide additional guidance. During the optimization
+      process, LDM3D provides additional prior information: The RGBD knowledge yield supervision
+      in depth, while panoramic knowledge mitigates the issues of limited views with perspective images
+      and disambiguates the global structure of a scene.
+    </p>
+    <p>&nbsp;</p>
+
+    <div class="video-container">
+      <div class="video-block">
+        <div class="video-wrapper">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/dkaFjSu67oc?si=Hw6eS-k9PsOUXX7m"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <h3>Illustration of SceneWiz3D's pipeline</h3>
+      </div>
+      <!--     
+              <div class="video-block">
+                  <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/QBQC9wbew7g?si=wg6NKlc2qJnwIJ-k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  <h3>Synthesized 3D Scenes</h3>
+              </div> -->
+    </div>
+    <p>&nbsp;</p>
+
+
+    <h2 id="videos"> Artistic scenes </h2>
+    <p> What will you see upon awakening from a deep dream? </p>
+    <p style="color:red;"> Hover the mouse over the image area to see the text prompt!</p>
+    <div class="video-grid">
+      <div class="video-row">
+        <div class="video" data-hover-text="a bedroom with large windows, revealing an alien galaxy">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/artistic/1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video"
+          data-hover-text="a bedroom with large windows, revealing vibrant garden, watercolor painting">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/artistic/2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video" data-hover-text="a bedroom, aerial view of bustling skyscrapers outside, by van gogh">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/artistic/3.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video" data-hover-text="a bedroom with large windows revealing sunset outside, ukiyo-e style">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/artistic/4.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="video-row">
+        <div class="video" data-hover-text="a bedroom with large windows revealing majestic snow-capped mountain range">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/artistic/5.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video" data-hover-text="a bedroom with large windows revealing a enchanted forest outside">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/artistic/6.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video" data-hover-text="a bedroom with large windows revealing sunset outside">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/artistic/7.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video" data-hover-text="a bedroom, aerial view of bustling skyscrapers outside, by van gogh">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/artistic/8.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="video-row">
+        <div class="video" data-hover-text="a bedroom with large windows, revealing roaring blaze outsideun">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/artistic/9.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video" data-hover-text="a bedroom with large windows revealing sunset outside">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/artistic/10.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video"
+          data-hover-text="a bedroom with large windows, showing enchanted forest outside, by Joan Miro, in Surrealism style">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/artistic/11.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video"
+          data-hover-text="a bedroom with large windows, revealing aerial view of bustling skyscrapers outside">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/artistic/12.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="video-row">
+        <div class="video" data-hover-text="a bedroom with large windows revealing sunset outside, ukiyo-e style">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/artistic/13.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video"
+          data-hover-text="a bedroom with large windows, revealing sunset outside, J.M.W. Turner style">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/artistic/14.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video" data-hover-text="a bedroom with large windows, revealing sunset outside, oil painting">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/artistic/15.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video" data-hover-text="a bedroom with large windows, revealing sunset outside">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/artistic/16.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+
+    <h2 id="videos"> Diverse scene types </h2>
+    <div class="video-grid">
+      <div class="video-row">
+        <div class="video" data-hover-text="an astronaut flying across multi-universe">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/diverse/0.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video" data-hover-text="a bedroom in Black-and-White style">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/diverse/1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video" data-hover-text="a washing room in anime style">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/diverse/2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video" data-hover-text="Curry in the basketball court">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/diverse/3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="video-row">
+        <div class="video" data-hover-text="miniature car models on the table">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/diverse/4.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video" data-hover-text="a dungeon in a comic">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/diverse/5.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video" data-hover-text="many rockets being launched in the desert">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/diverse/6.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video" data-hover-text="a bedroom with floating cloud in anime style">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/diverse/7.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="video-row">
+        <div class="video" data-hover-text="rockets flying across starry sky">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/diverse/8.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video"
+          data-hover-text="an astronaut lands on the moon, embarking on an exploration of the unknown and mysterious universe">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/diverse/9.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video" data-hover-text="A spacecraft navigating through the tranquil universe">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/diverse/10.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video" data-hover-text="a Shogun in a spacious Dojo">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/diverse/11.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+
+    <h2 id="interaction"> Manipulating the scenes</h2>
+    <p style="color:red;"> The dynamic manipulation of objects will happen within one second in the video. Stay tuned!
+    </p>
+    <div class="video3-grid">
+      <div class="video3-row">
+
+        <div class="video3" data-hover-text="LEGO-built buildings">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/interaction/add1.mp4" type="video/mp4">
+          </video>
+          <div class="add-overlay">Add</div>
+        </div>
+
+        <div class="video3" data-hover-text="an old dormitory, 1990s point and click 16bit adventure game style">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/interaction/add2.mp4" type="video/mp4">
+          </video>
+          <div class="add-overlay">Add</div>
+        </div>
+        <div class="video3" data-hover-text="pencil-drawing buildings">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/interaction/add3.mp4" type="video/mp4">
+          </video>
+          <div class="add-overlay">Add</div>
+        </div>
+      </div>
+      <div class="video3-row">
+        <div class="video3" data-hover-text="cars running at the street, by Joan Miro, in Surrealism style">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/interaction/big.mp4" type="video/mp4">
+          </video>
+          <div class="add-overlay">Larger</div>
+        </div>
+        <div class="video3" data-hover-text="an old dormitory, 1990s point and click 16bit adventure game style">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/interaction/mv.mp4" type="video/mp4">
+          </video>
+          <div class="add-overlay">Move</div>
+        </div>
+        <div class="video3" data-hover-text="pavilions and towers in Chinese ink painting">
+          <video autoplay loop muted playsinline loading="lazy">
+            <source src="media/interaction/rm.mp4" type="video/mp4">
+          </video>
+          <div class="add-overlay">Remove</div>
+        </div>
+
+      </div>
+    </div>
+
+    <h2 id="compare"> Comparison with baselines</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>A bedroom with large windows revealing sunset outside</th>
+          <th>Washing room,<br> realistic detailed photo</th>
+          <th>A bedroom by Pablo Picasso</th>
+        </tr>
+      </thead>
+
+
+      <tbody>
+        <tr>
+          <th>DreamFusion</th>
+          <td> <video style="width: 88.33%;" autoplay loop muted playsinline loading="lazy">
+              <source src="media/comparison/sunset/dreamfusion.mp4" type="video/mp4">
+            </video>
+          </td>
+          <td> <video style="width: 88.33%;" autoplay loop muted playsinline loading="lazy">
+              <source src="media/comparison/washing/dreamfusion.mp4" type="video/mp4">
+            </video></td>
+          <td> <video style="width: 88.33%;" autoplay loop muted playsinline loading="lazy">
+              <source src="media/comparison/pablo/dreamfusion.mp4" type="video/mp4">
+            </video>
+          </td>
+        </tr>
+        <tr>
+          <th>ProlificDreamer</th>
+          <td> <video style="width: 88.33%;" autoplay loop muted playsinline loading="lazy">
+              <source src="media/comparison/sunset/prolificdreamer.mp4" type="video/mp4">
+            </video>
+          </td>
+          <td> <video style="width: 88.33%;" autoplay loop muted playsinline loading="lazy">
+              <source src="media/comparison/washing/prolificdreamer.mp4" type="video/mp4">
+            </video></td>
+          <td> <video style="width: 88.33%;" autoplay loop muted playsinline loading="lazy">
+              <source src="media/comparison/pablo/prolificdreamer.mp4" type="video/mp4">
+            </video>
+          </td>
+        </tr>
+        <tr>
+          <th>Text2room</th>
+          <td> <video style="width: 88.33%;" autoplay loop muted playsinline loading="lazy">
+              <source src="media/comparison/sunset/text2room.mp4" type="video/mp4">
+            </video>
+          </td>
+          <td> <video style="width: 88.33%;" autoplay loop muted playsinline loading="lazy">
+              <source src="media/comparison/washing/text2room.mp4" type="video/mp4">
+            </video></td>
+          <td> <video style="width: 88.33%;" autoplay loop muted playsinline loading="lazy">
+              <source src="media/comparison/pablo/text2room.mp4" type="video/mp4">
+            </video>
+          </td>
+        </tr>
+        <tr>
+          <th>LDM3D</th>
+          <td> <video style="width: 88.33%;" autoplay loop muted playsinline loading="lazy">
+              <source src="media/comparison/sunset/ldm3d.mp4" type="video/mp4">
+            </video>
+          </td>
+          <td> <video style="width: 88.33%;" autoplay loop muted playsinline loading="lazy">
+              <source src="media/comparison/washing/ldm3d.mp4" type="video/mp4">
+            </video></td>
+          <td> <video style="width: 88.33%;" autoplay loop muted playsinline loading="lazy">
+              <source src="media/comparison/pablo/ldm3d.mp4" type="video/mp4">
+            </video>
+          </td>
+        </tr>
+        <tr>
+          <th>SceneWiz3D</th>
+          <td> <video style="width: 88.33%;" autoplay loop muted playsinline loading="lazy">
+              <source src="media/comparison/sunset/ours.mp4" type="video/mp4">
+            </video>
+          </td>
+          <td> <video style="width: 88.33%;" autoplay loop muted playsinline loading="lazy">
+              <source src="media/comparison/washing/ours.mp4" type="video/mp4">
+            </video></td>
+          <td> <video style="width: 88.33%;" autoplay loop muted playsinline loading="lazy">
+              <source src="media/comparison/pablo/ours.mp4" type="video/mp4">
+            </video>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="citation"> Citation </h2>
+    <pre><code>@inproceedings{zhang2023scenewiz3d,
+              author = {Qihang Zhang and Chaoyang Wang and Aliaksandr Siarohin and Peiye Zhuang and Yinghao Xu and Ceyuan Yang and Dahua Lin and Bo Dai and Bolei Zhou and Sergey Tulyakov and Hsin-Ying Lee},
+              title = {{SceneWiz3D}: Towards Text-guided {3D} Scene Composition},
+              booktitle = {arXiv},
+              year = {2023}
+            }</code></pre>
+
+
+    <h2 id="compare"> Acknowledgments</h2>
+    <p>We thank Songfang Han for the assistant in setting up SDFusion. We thank Aniruddha Mahapatra for fruitful
+      discussions and comments about this work.</p>
+    <p>We borrow the source code of this website from <a style="color: blue;"
+        href="https://nvlabs.github.io/genvs/">GeNVS</a>.</p>
+
+
+
+    <div class="n-footer">
+    </div>
+    <script>
+      const videos = document.querySelectorAll('.video video');
+
+      videos.forEach((video) => {
+        video.addEventListener('mouseover', () => {
+          video.pause();
+        });
+
+        video.addEventListener('mouseout', () => {
+          video.play();
+        });
+      });
+      document.querySelectorAll('video').forEach(function (el, i) {
+        el.playbackRate = 0.5;
+      });
+      document.querySelectorAll('.video3 video').forEach(function (el, i) {
+        el.playbackRate = 0.25;
+      });
+    </script>
+
+</body>
+
+</html>
