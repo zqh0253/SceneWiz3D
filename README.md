@@ -20,6 +20,7 @@ This repository is the official implementation of [SceneWiz3D]().
 > Qihang Zhang, Chaoyang Wang, Aliaksandr Siarohin, Peiye Zhuang, Yinghao Xu, Ceyuan Yang, Dahua Lin, Bolei Zhou, Sergey Tulyakov, Hsin-Ying Lee
 
 [![arXiv](https://img.shields.io/badge/arXiv-xxxx.xxxxx-b31b1b.svg)]( ) [![Project Page](https://img.shields.io/badge/Project-Website-green)](https://zqh0253.github.io/scenewiz3d/)
- 
+
+ **This paper is currently in the "on hold" status on Arxiv. Hopefully Arxiv posts it soon, but for now it's just hosted on our project website. You can find PDF at [here](https://zqh0253.github.io/SceneWiz3D/media/scenewiz3d.pdf).**
 
 More to come. Stay tuned!
